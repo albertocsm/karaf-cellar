@@ -67,7 +67,7 @@
         <module>webconsole</module>
         <module>assembly</module>
         <module>samples</module>
-        <module>itests</module>
+        <!--<module>itests</module>-->
     </modules>
 
     <scm>
