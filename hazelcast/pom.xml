@@ -57,6 +57,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+          <groupId>com.bikeemotion.sdk</groupId>
+          <artifactId>hazelcast-sdk</artifactId>
+          <version>0.2-SNAPSHOT</version>
+        </dependency>
+
         <!-- Logging Dependencies -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -88,7 +94,8 @@
                             org.apache.karaf.cellar.utils.ping;version="${project.version}",
                             org.apache.karaf.features;version="[3,5)",
                             org.osgi*,
-                            org.slf4j;version="[1.6,2)";resolution:=optional
+                          org.slf4j;version="[1.6,2)";resolution:=optional,
+                          com.bikeemotion.sdk.hazelcast
                         </Import-Package>
                         <DynamicImport-Package>javax.*,org.w3c.*,org.xml.*,*</DynamicImport-Package>
                         <Private-Package>

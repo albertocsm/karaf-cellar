@@ -16,7 +16,6 @@ package org.apache.karaf.cellar.hazelcast.factory;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
-import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import org.apache.karaf.cellar.core.utils.CombinedClassLoader;
 import org.osgi.framework.BundleContext;
@@ -74,8 +73,11 @@ public class HazelcastServiceFactory {
         if (combinedClassLoader != null) {
             Thread.currentThread().setContextClassLoader(combinedClassLoader);
         }
-        return Hazelcast.newHazelcastInstance(configurationManager.getHazelcastConfig());
+//        ((HazelcastClient)instance).getConfig().setClassLoader(combinedClassLoader);
+        return com.bikeemotion.sdk.hazelcast.HazelcastInstanceFactory.create("be-hazelcast","172.17.42.1","be-group","bikeemotion");
     }
+
+    
 
     public BundleContext getBundleContext() {
         return bundleContext;
