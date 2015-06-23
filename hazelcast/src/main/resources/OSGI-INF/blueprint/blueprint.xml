@@ -15,9 +15,7 @@
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
         xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
 
-    <bean id="hazelcast" class="com.hazelcast.core.Hazelcast" factory-ref="instanceFactory"
-          factory-method="getInstance" destroy-method="shutdown"/>
-    <service ref="hazelcast" interface="com.hazelcast.core.HazelcastInstance"/>
+  <reference id="hazelcast" interface="com.hazelcast.core.HazelcastInstance" filter="(groupName=be-group)"  availability="mandatory"/>
 
     <bean id="instanceFactory" class="org.apache.karaf.cellar.hazelcast.factory.HazelcastServiceFactory"
           init-method="init" destroy-method="destroy">
