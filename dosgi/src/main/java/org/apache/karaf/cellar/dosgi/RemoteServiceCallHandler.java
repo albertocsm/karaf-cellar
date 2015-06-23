@@ -108,6 +108,11 @@ public class RemoteServiceCallHandler extends CellarSupport implements EventHand
                     result.setResult(new RemoteServiceInvocationException(e));
                     producer.produce(result);
                 }
+                catch (Throwable e) {
+                  LOGGER.error("CELLAR DOSGI: unkown error in remote service invocation", e);
+                  result.setResult(new RemoteServiceInvocationException(e));
+                  producer.produce(result);
+                }
             }
         }
     }
