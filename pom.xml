@@ -665,4 +665,17 @@
         </profile>
     </profiles>
 
+  <distributionManagement>
+    <repository>
+      <id>private_nexus</id>
+      <name>Internal Releases</name>
+      <url>http://${nexus.ip}:${nexus.port}/content/repositories/${nexus.repository}/</url>
+    </repository>
+    <snapshotRepository>
+      <id>private_nexus</id>
+      <name>Internal Releases</name>
+      <url>http://${nexus.ip}:${nexus.port}/content/repositories/${nexus.repository}/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
 </project>
